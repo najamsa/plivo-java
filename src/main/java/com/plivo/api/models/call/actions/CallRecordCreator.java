@@ -15,7 +15,7 @@ public class CallRecordCreator extends Creator<CallRecordCreateResponse> {
 
   @Override
   protected retrofit2.Call<CallRecordCreateResponse> obtainCall() {
-    return client().getApiService().callRecordCreate(client().getAuthId(), id, this);
+    return client().getRegularClient().getApiService().callRecordCreate(client().getRegularClient().getAuthId(), id, this);
   }
 
   public CallRecordCreateResponse record() throws IOException, PlivoRestException {

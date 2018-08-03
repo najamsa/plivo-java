@@ -9,7 +9,6 @@ import com.squareup.okhttp.mockwebserver.RecordedRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.net.URLDecoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -79,9 +78,9 @@ public class BaseTest {
     server = new MockWebServer();
     server.start();
 
-    PlivoClient.BASE_URL = server.url("/").toString();
+    RegularClient.BASE_URL = server.url("/").toString();
     Plivo.init(authId, authToken);
-    Plivo.getClient().setTesting(true);
+    Plivo.getClient().getRegularClient().setTesting(true);
   }
 
   @After

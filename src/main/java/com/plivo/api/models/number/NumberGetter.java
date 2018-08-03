@@ -11,6 +11,6 @@ public class NumberGetter extends Getter<Number> {
 
   @Override
   protected Call<Number> obtainCall() {
-    return client().getApiService().numberGet(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().numberGet(client().getRegularClient().getAuthId(), id);
   }
 }

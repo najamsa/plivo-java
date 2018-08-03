@@ -15,7 +15,7 @@ public class CallRecordDeleter extends Deleter<Call> {
 
   @Override
   protected retrofit2.Call<ResponseBody> obtainCall() {
-    return client().getApiService().callRecordDelete(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().callRecordDelete(client().getRegularClient().getAuthId(), id);
   }
 
   public void recordStop() throws IOException, PlivoRestException {

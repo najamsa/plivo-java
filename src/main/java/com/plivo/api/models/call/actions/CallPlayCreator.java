@@ -70,7 +70,7 @@ public class CallPlayCreator extends Creator<CallPlayCreateResponse> {
 
   @Override
   protected Call<CallPlayCreateResponse> obtainCall() {
-    return client().getApiService().callPlayCreate(client().getAuthId(), id, this);
+    return client().getRegularClient().getApiService().callPlayCreate(client().getRegularClient().getAuthId(), id, this);
   }
 
   public CallPlayCreateResponse play() throws IOException, PlivoRestException {

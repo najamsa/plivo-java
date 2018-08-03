@@ -11,6 +11,6 @@ public class AccountGetter extends Getter<Account> {
 
   @Override
   protected Call<Account> obtainCall() {
-    return client().getApiService().accountGet(client().getAuthId());
+    return client().getRegularClient().getApiService().accountGet(client().getRegularClient().getAuthId());
   }
 }

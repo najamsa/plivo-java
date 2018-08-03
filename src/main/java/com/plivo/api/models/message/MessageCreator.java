@@ -108,6 +108,6 @@ public class MessageCreator extends Creator<MessageCreateResponse> {
 
   @Override
   protected Call<MessageCreateResponse> obtainCall() {
-    return client().getApiService().messageSend(client().getAuthId(), this);
+    return client().getRegularClient().getApiService().messageSend(client().getRegularClient().getAuthId(), this);
   }
 }

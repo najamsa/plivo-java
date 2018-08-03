@@ -15,7 +15,7 @@ public class ConferenceRecordDeleter extends Deleter<Conference> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getApiService().conferenceRecordDelete(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().conferenceRecordDelete(client().getRegularClient().getAuthId(), id);
   }
 
   public void stop() throws IOException, PlivoRestException {

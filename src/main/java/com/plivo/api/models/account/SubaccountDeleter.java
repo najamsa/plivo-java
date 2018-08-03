@@ -17,6 +17,6 @@ public class SubaccountDeleter extends Deleter<Subaccount> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getApiService().subaccountDelete(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().subaccountDelete(client().getRegularClient().getAuthId(), id);
   }
 }

@@ -12,8 +12,8 @@ public class ConferenceMemberSpeakDeleter extends ConferenceMemberDeleterAction<
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getApiService()
-      .conferenceMemberSpeakDelete(client().getAuthId(), conferenceName, id);
+    return client().getRegularClient().getApiService()
+      .conferenceMemberSpeakDelete(client().getRegularClient().getAuthId(), conferenceName, id);
   }
 
   @Override

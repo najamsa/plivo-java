@@ -42,8 +42,8 @@ public class ConferenceMemberSpeakCreator extends
 
   @Override
   protected Call<ConferenceMemberActionResponse> obtainCall() {
-    return client().getApiService()
-      .conferenceMemberSpeakCreate(client().getAuthId(), conferenceName, memberId, this);
+    return client().getRegularClient().getApiService()
+      .conferenceMemberSpeakCreate(client().getRegularClient().getAuthId(), conferenceName, memberId, this);
   }
 
   public ConferenceMemberActionResponse speak() throws IOException, PlivoRestException {

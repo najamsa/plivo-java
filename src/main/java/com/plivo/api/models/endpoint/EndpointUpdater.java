@@ -42,6 +42,6 @@ public class EndpointUpdater extends Updater<EndpointUpdateResponse> {
 
   @Override
   protected Call<EndpointUpdateResponse> obtainCall() {
-    return client().getApiService().endpointUpdate(client().getAuthId(), id, this);
+    return client().getRegularClient().getApiService().endpointUpdate(client().getRegularClient().getAuthId(), id, this);
   }
 }

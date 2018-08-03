@@ -16,6 +16,6 @@ public class SubaccountGetter extends Getter<Subaccount> {
 
   @Override
   protected Call<Subaccount> obtainCall() {
-    return client().getApiService().subaccountGet(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().subaccountGet(client().getRegularClient().getAuthId(), id);
   }
 }

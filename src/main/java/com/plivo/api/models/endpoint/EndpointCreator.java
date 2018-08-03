@@ -27,6 +27,6 @@ public class EndpointCreator extends Creator<EndpointCreateResponse> {
 
   @Override
   protected Call<EndpointCreateResponse> obtainCall() {
-    return client().getApiService().endpointCreate(client().getAuthId(), this);
+    return client().getRegularClient().getApiService().endpointCreate(client().getRegularClient().getAuthId(), this);
   }
 }

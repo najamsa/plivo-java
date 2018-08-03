@@ -11,6 +11,6 @@ public class MessageGetter extends Getter<Message> {
 
   @Override
   protected Call<Message> obtainCall() {
-    return client().getApiService().messageGet(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().messageGet(client().getRegularClient().getAuthId(), id);
   }
 }

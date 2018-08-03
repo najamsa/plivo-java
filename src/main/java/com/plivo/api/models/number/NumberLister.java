@@ -59,6 +59,6 @@ public class NumberLister extends Lister<Number> {
 
   @Override
   protected Call<ListResponse<Number>> obtainCall() {
-    return client().getApiService().numberList(client().getAuthId(), toMap());
+    return client().getRegularClient().getApiService().numberList(client().getRegularClient().getAuthId(), toMap());
   }
 }

@@ -15,7 +15,7 @@ public class CallSpeakDeleter extends Deleter<Call> {
 
   @Override
   protected retrofit2.Call<ResponseBody> obtainCall() {
-    return client().getApiService().callSpeakDelete(client().getAuthId(), id);
+    return client().getRegularClient().getApiService().callSpeakDelete(client().getRegularClient().getAuthId(), id);
   }
 
   public void speakStop() throws IOException, PlivoRestException {

@@ -68,7 +68,7 @@ public class NumberCreator extends Creator<NumberCreateResponse> {
 
   @Override
   protected Call<NumberCreateResponse> obtainCall() {
-    return client().getApiService().numberCreate(client().getAuthId(), this);
+    return client().getRegularClient().getApiService().numberCreate(client().getRegularClient().getAuthId(), this);
   }
 
   public NumberCreateResponse add() throws IOException, PlivoRestException {

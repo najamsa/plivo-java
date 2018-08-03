@@ -78,7 +78,7 @@ public class ConferenceRecordCreator extends Creator<ConferenceRecordCreateRespo
 
   @Override
   protected Call<ConferenceRecordCreateResponse> obtainCall() {
-    return client().getApiService().conferenceRecordCreate(client().getAuthId(), conferenceName);
+    return client().getRegularClient().getApiService().conferenceRecordCreate(client().getRegularClient().getAuthId(), conferenceName);
   }
 
   public ConferenceRecordCreateResponse record() throws IOException, PlivoRestException {

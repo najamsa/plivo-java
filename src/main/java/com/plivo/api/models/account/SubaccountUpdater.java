@@ -41,6 +41,6 @@ public class SubaccountUpdater extends Updater<SubaccountUpdateResponse> {
 
   @Override
   protected Call<SubaccountUpdateResponse> obtainCall() {
-    return client().getApiService().subaccountModify(client().getAuthId(), id, this);
+    return client().getRegularClient().getApiService().subaccountModify(client().getRegularClient().getAuthId(), id, this);
   }
 }
