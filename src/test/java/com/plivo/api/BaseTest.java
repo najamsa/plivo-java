@@ -39,7 +39,7 @@ public class BaseTest {
   }
 
   private static Map<String, String> splitQuery(URI uri) throws UnsupportedEncodingException {
-    Map<String, String> queryPairs = new LinkedHashMap<String, String>();
+    Map<String, String> queryPairs = new LinkedHashMap<>();
     String query = uri.getQuery();
     if (query == null) {
       return queryPairs;
@@ -55,7 +55,7 @@ public class BaseTest {
   }
 
   protected void assertRequest(RecordedRequest request, String method, String format, Map<String, String> params,
-    Object... objects) throws MalformedURLException, UnsupportedEncodingException {
+    Object... objects) throws UnsupportedEncodingException {
     assertEquals(method, request.getMethod());
     URI uri = URI.create(request.getPath());
     assertEquals(String.format(format, objects), uri.getPath());
@@ -63,13 +63,19 @@ public class BaseTest {
   }
 
   protected void assertRequest(String method, String format, Object... objects)
-    throws InterruptedException, MalformedURLException, UnsupportedEncodingException {
+    throws InterruptedException, UnsupportedEncodingException {
     assertRequest(server.takeRequest(), method, "/Account/" + authId + "/" + format,
       new LinkedHashMap<>(), objects);
   }
 
+  protected void assertPhloRequest(String method, String apiPrefix, String format, Object... objects)
+    throws InterruptedException, UnsupportedEncodingException {
+    assertRequest(server.takeRequest(), method, apiPrefix + format,
+      new LinkedHashMap<>(), objects);
+  }
+
   protected void assertRequest(String method, String format, Map<String, String> params, Object... objects)
-    throws InterruptedException, MalformedURLException, UnsupportedEncodingException {
+    throws InterruptedException, UnsupportedEncodingException {
     assertRequest(server.takeRequest(), method, "/Account/" + authId + "/" + format, params, objects);
   }
 
@@ -79,8 +85,10 @@ public class BaseTest {
     server.start();
 
     RegularClient.BASE_URL = server.url("/").toString();
+    PhloClient.BASE_URL = server.url("/").toString();
     Plivo.init(authId, authToken);
     Plivo.getClient().getRegularClient().setTesting(true);
+    Plivo.getClient().getPhloClient().setTesting(true);
   }
 
   @After
