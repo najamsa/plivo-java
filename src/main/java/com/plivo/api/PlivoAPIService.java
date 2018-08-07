@@ -351,6 +351,8 @@ public interface PlivoAPIService {
   @GET("phlo/{phloId}/{nodeType}/{nodeId}")
   Call<MultiPartyCall> multiPartyCallGet(@Path("phloId") String phloId, @Path("nodeType") NodeType nodeType, @Path("nodeId") final String nodeId);
 
+  // Required as there is no body
+  @Headers("Content-Type: application/json")
   @POST("account/{authId}/phlo/{phloId}")
   Call<PhloRunResponse> runPhlo(@Path("authId") String authId, @Path("phloId") String phloId);
 }
