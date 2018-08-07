@@ -6,8 +6,8 @@ import static junit.framework.TestCase.assertEquals;
 import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
 import com.squareup.okhttp.mockwebserver.RecordedRequest;
+
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.util.LinkedHashMap;
@@ -23,16 +23,16 @@ public class BaseTest {
 
   protected String expectResponse(String fixtureName, int statusCode) {
     MockResponse mockResponse = new MockResponse()
-      .setResponseCode(statusCode);
+        .setResponseCode(statusCode);
 
     String body = loadFixture(fixtureName);
 
     if (body != null) {
-      mockResponse.setBody(body);
+        mockResponse.setBody(body);
     }
 
     server.enqueue(
-      mockResponse
+        mockResponse
     );
 
     return body;
@@ -49,7 +49,8 @@ public class BaseTest {
     for (String pair : pairs) {
       int idx = pair.indexOf("=");
       queryPairs.put(
-        URLDecoder.decode(pair.substring(0, idx), "UTF-8"), URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
+          URLDecoder.decode(pair.substring(0, idx), "UTF-8"),
+              URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
     }
     return queryPairs;
   }
