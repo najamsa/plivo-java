@@ -5,7 +5,7 @@ import com.plivo.api.models.phlo.Phlo;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MemberTest extends BaseTest{
+public class MultiPartyCallMemberTest extends BaseTest{
   private Phlo phlo;
   private MultiPartyCall multiPartyCall;
 

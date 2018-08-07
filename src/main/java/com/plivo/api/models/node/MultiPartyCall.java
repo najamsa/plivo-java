@@ -2,9 +2,9 @@ package com.plivo.api.models.node;
 
 public class MultiPartyCall extends Node {
 
-  private Member member;
+  private MultiPartyCallMember member;
 
-  public Member getMember() {
+  public MultiPartyCallMember getMember() {
     return member;
   }
 
@@ -23,7 +23,7 @@ public class MultiPartyCall extends Node {
     return update(NodeActionType.COLDTRANSFER, NodeType.MULTIPARTYCALL, triggerSource, to, role);
   }
 
-  public Member member(final String memberId){
-    return new Member(getPhloId(), NodeType.MULTIPARTYCALL, getNodeId(), memberId);
+  public MultiPartyCallMember member(final String memberId){
+    return new MultiPartyCallMember(getPhloId(), NodeType.MULTIPARTYCALL, getNodeId(), memberId);
   }
 }

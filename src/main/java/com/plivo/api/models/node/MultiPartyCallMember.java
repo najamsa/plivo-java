@@ -2,14 +2,14 @@ package com.plivo.api.models.node;
 
 import com.plivo.api.models.base.BaseResource;
 
-public class Member extends BaseResource {
+public class MultiPartyCallMember extends BaseResource {
 
   private String nodeId;
   private String phloId;
   private NodeType nodeType;
   private String memberId;
 
-  public Member(final String phloId, final NodeType nodeType, final String nodeId, final String memberId) {
+  public MultiPartyCallMember(final String phloId, final NodeType nodeType, final String nodeId, final String memberId) {
     this.nodeId = nodeId;
     this.phloId = phloId;
     this.nodeType = nodeType;
