@@ -14,25 +14,6 @@ public class NodeActionPayload {
     this.action = action;
   }
 
-  public NodeActionPayload(final NodeActionType action) {
-    this.action = action;
-  }
-
-  public NodeActionPayload triggerSource(final String triggerSource){
-    this.triggerSource = triggerSource;
-    return this;
-  }
-
-  public NodeActionPayload to(final String to){
-    this.to = to;
-    return this;
-  }
-
-  public NodeActionPayload role(final String role){
-    this.role = role;
-    return this;
-  }
-
   public String getTriggerSource() {
     return triggerSource;
   }

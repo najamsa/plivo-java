@@ -11,12 +11,6 @@ public class Node extends BaseResource {
 
   public Node(){}
 
-  public Node(final String phloId, final NodeType nodeType, final String nodeId) {
-    this.phloId = phloId;
-    this.nodeType = nodeType;
-    this.nodeId = nodeId;
-  }
-
   public String getPhloId() {
     return phloId;
   }

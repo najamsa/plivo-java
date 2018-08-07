@@ -16,9 +16,6 @@ public class Member extends BaseResource {
     this.memberId = memberId;
   }
 
-  public Member() {
-  }
-
   public String getMemberId() {
     return memberId;
   }
