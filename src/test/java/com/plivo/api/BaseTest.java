@@ -69,10 +69,18 @@ public class BaseTest {
       new LinkedHashMap<>(), objects);
   }
 
-  protected void assertPhloRequest(String method, String apiPrefix, String format, Object... objects)
+  protected void assertRequestWithBody(String method, String apiPrefix, String format)
     throws InterruptedException, UnsupportedEncodingException {
     assertRequest(server.takeRequest(), method, apiPrefix + format,
-      new LinkedHashMap<>(), objects);
+      new LinkedHashMap<>());
+  }
+
+  protected void assertRequestWithBody(String method, String apiPrefix, String format, String jsonBody)
+    throws InterruptedException, UnsupportedEncodingException {
+    RecordedRequest recordedRequest = server.takeRequest();
+    assertRequest(recordedRequest, method, apiPrefix + format,
+      new LinkedHashMap<>());
+    assertEquals(recordedRequest.getBody().readUtf8(), jsonBody);
   }
 
   protected void assertRequest(String method, String format, Map<String, String> params, Object... objects)

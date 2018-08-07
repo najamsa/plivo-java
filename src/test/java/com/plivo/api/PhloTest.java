@@ -18,7 +18,7 @@ public class PhloTest extends BaseTest {
         .get();
 
     assertEquals("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6", phlo.getId());
-    assertPhloRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
   }
 
   @Test
@@ -34,7 +34,7 @@ public class PhloTest extends BaseTest {
         .get();
 
     assertEquals("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6", phlo.getId());
-    assertPhloRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
   }
 
   @Test
@@ -46,14 +46,14 @@ public class PhloTest extends BaseTest {
         .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
         .get();
 
-    assertPhloRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
     assertEquals("f4789ccf-25f5-4a1f-91a4-55ca022ba903", multiPartyCall.getNodeId());
 
-    assertPhloRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
   }
 
@@ -69,14 +69,14 @@ public class PhloTest extends BaseTest {
         .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
         .client(client).get();
 
-    assertPhloRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").client(client).get();
 
     assertEquals("f4789ccf-25f5-4a1f-91a4-55ca022ba903", multiPartyCall.getNodeId());
 
-    assertPhloRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
   }
 
@@ -88,7 +88,7 @@ public class PhloTest extends BaseTest {
         .runner("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
         .create();
 
-    assertPhloRequest("POST", "/account/MA123456789012345678/",
+    assertRequestWithBody("POST", "/account/MA123456789012345678/",
         "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
   }
 
@@ -103,7 +103,7 @@ public class PhloTest extends BaseTest {
         .client(client)
         .create();
 
-    assertPhloRequest("POST", "/account/MA123456789012345678/",
+    assertRequestWithBody("POST", "/account/MA123456789012345678/",
         "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
   }
 
