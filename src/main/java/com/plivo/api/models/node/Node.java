@@ -23,9 +23,9 @@ public class Node extends BaseResource {
     return nodeName;
   }
 
-  public NodeAction update(final NodeActionType nodeActionType, final NodeType nodeType, final String triggerSource,
-                           final String to, final String role) {
-    return new NodeAction(this.phloId, nodeType, this.nodeId, triggerSource, to, role, nodeActionType);
+  public TriggerApiNodeAction update(final NodeActionType nodeActionType, final NodeType nodeType, final String triggerSource,
+                                     final String to, final String role) {
+    return new TriggerApiNodeAction(this.phloId, nodeType, this.nodeId, triggerSource, to, role, nodeActionType);
   }
 
   @Override

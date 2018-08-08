@@ -4,7 +4,7 @@ import com.plivo.api.models.base.BaseResponse;
 import com.plivo.api.models.base.Creator;
 import retrofit2.Call;
 
-public class MemberAction<T extends BaseResponse> extends Creator<ActionResponse> {
+public class TriggerApiMemberAction<T extends BaseResponse> extends Creator<ActionResponse> {
 
   private final String phloId;
   private final String nodeId;
@@ -12,7 +12,7 @@ public class MemberAction<T extends BaseResponse> extends Creator<ActionResponse
   private final NodeType nodeType;
   private MemberActionPayload payload;
 
-  public MemberAction(final String phloId, final NodeType nodeType, final String nodeId, final String memberId, final MemberActionType actionType) {
+  public TriggerApiMemberAction(final String phloId, final NodeType nodeType, final String nodeId, final String memberId, final MemberActionType actionType) {
     this.phloId = phloId;
     this.nodeType = nodeType;
     this.nodeId = nodeId;

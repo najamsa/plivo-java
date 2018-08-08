@@ -8,18 +8,18 @@ public class MultiPartyCall extends Node {
     return member;
   }
 
-  public NodeAction call(final String triggerSource, final String to,
-                         final String role) {
+  public TriggerApiNodeAction call(final String triggerSource, final String to,
+                                   final String role) {
     return update(NodeActionType.CALL, NodeType.MULTIPARTYCALL, triggerSource, to, role);
   }
 
-  public NodeAction warmTransfer(final String triggerSource, final String to,
-                                 final String role) {
+  public TriggerApiNodeAction warmTransfer(final String triggerSource, final String to,
+                                           final String role) {
     return update(NodeActionType.WARMTRANSFER, NodeType.MULTIPARTYCALL, triggerSource, to, role);
   }
 
-  public NodeAction coldTransfer(final String triggerSource, final String to,
-                                 final String role) {
+  public TriggerApiNodeAction coldTransfer(final String triggerSource, final String to,
+                                           final String role) {
     return update(NodeActionType.COLDTRANSFER, NodeType.MULTIPARTYCALL, triggerSource, to, role);
   }
 

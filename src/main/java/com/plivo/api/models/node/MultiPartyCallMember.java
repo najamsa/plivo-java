@@ -32,31 +32,31 @@ public class MultiPartyCallMember extends BaseResource {
     return nodeType;
   }
 
-  public MemberAction update(final MemberActionType actionType) {
-    return new MemberAction(this.phloId, this.nodeType, this.nodeId, this.memberId, actionType);
+  public TriggerApiMemberAction update(final MemberActionType actionType) {
+    return new TriggerApiMemberAction(this.phloId, this.nodeType, this.nodeId, this.memberId, actionType);
   }
 
-  public MemberAction hold() {
+  public TriggerApiMemberAction hold() {
     return update(MemberActionType.HOLD);
   }
 
-  public MemberAction unhold() {
+  public TriggerApiMemberAction unhold() {
     return update(MemberActionType.UNHOLD);
   }
 
-  public MemberAction hangup() {
+  public TriggerApiMemberAction hangup() {
     return update(MemberActionType.HANGUP);
   }
 
-  public MemberAction resumeCall() {
+  public TriggerApiMemberAction resumeCall() {
     return update(MemberActionType.RESUMECALL);
   }
 
-  public MemberAction abortWarmTransfer() {
+  public TriggerApiMemberAction abortWarmTransfer() {
     return update(MemberActionType.ABORTWARMTRANSFER);
   }
 
-  public MemberAction voiceMailDrop() {
+  public TriggerApiMemberAction voiceMailDrop() {
     return update(MemberActionType.VOICEMAILDROP);
   }
 
