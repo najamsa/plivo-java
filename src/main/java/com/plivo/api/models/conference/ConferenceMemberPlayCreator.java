@@ -17,8 +17,8 @@ public class ConferenceMemberPlayCreator extends
 
   @Override
   protected Call<ConferenceMemberActionResponse> obtainCall() {
-    return client().getRegularClient().getApiService()
-      .conferenceMemberPlayCreate(client().getRegularClient().getAuthId(), conferenceName, memberId, this);
+    return client().getPlivoRestClient().getApiService()
+      .conferenceMemberPlayCreate(client().getPlivoRestClient().getAuthId(), conferenceName, memberId, this);
   }
 
   @Override

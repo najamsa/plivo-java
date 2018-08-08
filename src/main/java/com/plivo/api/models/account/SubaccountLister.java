@@ -8,6 +8,6 @@ public class SubaccountLister extends Lister<Subaccount> {
 
   @Override
   protected Call<ListResponse<Subaccount>> obtainCall() {
-    return client().getRegularClient().getApiService().subaccountList(client().getRegularClient().getAuthId(), limit, offset);
+    return client().getPlivoRestClient().getApiService().subaccountList(client().getPlivoRestClient().getAuthId(), limit, offset);
   }
 }

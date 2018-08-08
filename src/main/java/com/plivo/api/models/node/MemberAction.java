@@ -22,6 +22,6 @@ public class MemberAction<T extends BaseResponse> extends Creator<ActionResponse
 
   @Override
   protected Call<ActionResponse> obtainCall() {
-    return client().getPhloClient().getApiService().memberAction(this.phloId, this.nodeType, this.nodeId, this.memberId, this.payload);
+    return client().getPhloRestClient().getApiService().memberAction(this.phloId, this.nodeType, this.nodeId, this.memberId, this.payload);
   }
 }

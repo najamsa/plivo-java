@@ -12,6 +12,6 @@ public class EndpointDeleter extends Deleter<Endpoint> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getRegularClient().getApiService().endpointDelete(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().endpointDelete(client().getPlivoRestClient().getAuthId(), id);
   }
 }

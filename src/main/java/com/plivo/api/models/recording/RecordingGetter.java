@@ -11,6 +11,6 @@ public class RecordingGetter extends Getter<Recording> {
 
   @Override
   protected Call<Recording> obtainCall() {
-    return client().getRegularClient().getApiService().recordingGet(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().recordingGet(client().getPlivoRestClient().getAuthId(), id);
   }
 }

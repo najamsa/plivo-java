@@ -91,7 +91,7 @@ public class CallUpdater extends Updater<CallUpdateResponse> {
 
   @Override
   protected Call<CallUpdateResponse> obtainCall() {
-    return client().getRegularClient().getApiService().callUpdate(client().getRegularClient().getAuthId(), id, this);
+    return client().getPlivoRestClient().getApiService().callUpdate(client().getPlivoRestClient().getAuthId(), id, this);
   }
 
   public CallUpdateResponse transfer() throws IOException, PlivoRestException {

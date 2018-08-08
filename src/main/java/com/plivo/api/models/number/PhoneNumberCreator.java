@@ -27,6 +27,6 @@ public class PhoneNumberCreator extends Creator<PhoneNumberCreateResponse> {
 
   @Override
   protected Call<PhoneNumberCreateResponse> obtainCall() {
-    return client().getRegularClient().getApiService().phoneNumberCreate(client().getRegularClient().getAuthId(), number, this);
+    return client().getPlivoRestClient().getApiService().phoneNumberCreate(client().getPlivoRestClient().getAuthId(), number, this);
   }
 }

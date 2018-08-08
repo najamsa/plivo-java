@@ -18,6 +18,6 @@ public class NodeGetter extends Getter<Node> {
 
   @Override
   protected Call<Node> obtainCall() {
-    return client().getPhloClient().getApiService().nodeGet(phloId, nodeType, id);
+    return client().getPhloRestClient().getApiService().nodeGet(phloId, nodeType, id);
   }
 }

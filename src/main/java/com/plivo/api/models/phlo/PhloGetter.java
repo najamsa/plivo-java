@@ -11,7 +11,7 @@ public class PhloGetter extends Getter<Phlo> {
 
   @Override
   protected Call<Phlo> obtainCall() {
-    return client().getPhloClient().getApiService().phloGet(this.id);
+    return client().getPhloRestClient().getApiService().phloGet(this.id);
   }
 
 }

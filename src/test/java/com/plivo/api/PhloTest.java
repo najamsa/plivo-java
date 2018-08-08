@@ -45,18 +45,18 @@ public class PhloTest extends BaseTest {
     expectResponse("multiPartyCallGetResponse.json", 200);
 
     Phlo phlo = Phlo
-      .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
-      .get();
+          .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
+          .get();
 
     assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     Node node = phlo.nodeGetter(NodeType.MULTIPARTYCALL,
-      "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
+          "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
     assertEquals("f4789ccf-25f5-4a1f-91a4-55ca022ba903", node.getNodeId());
 
     assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
-      "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
+          "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
   }
 
   @Test
@@ -65,21 +65,21 @@ public class PhloTest extends BaseTest {
     expectResponse("multiPartyCallGetResponse.json", 200);
 
     PlivoClient client = new PlivoClient("MA123456789012345678",
-      "Zmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+          "Zmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
     Phlo phlo = Phlo
-      .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
-      .get();
+          .getter("a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6")
+          .get();
 
     assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     Node node = phlo.nodeGetter(NodeType.MULTIPARTYCALL,
-      "f4789ccf-25f5-4a1f-91a4-55ca022ba903").client(client).get();
+          "f4789ccf-25f5-4a1f-91a4-55ca022ba903").client(client).get();
 
     assertEquals("f4789ccf-25f5-4a1f-91a4-55ca022ba903", node.getNodeId());
 
     assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
-      "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
+          "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
   }
 
   @Test

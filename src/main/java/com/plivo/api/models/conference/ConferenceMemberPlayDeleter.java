@@ -12,8 +12,8 @@ public class ConferenceMemberPlayDeleter extends ConferenceMemberDeleterAction<C
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getRegularClient().getApiService()
-      .conferenceMemberPlayDelete(client().getRegularClient().getAuthId(), conferenceName, id);
+    return client().getPlivoRestClient().getApiService()
+      .conferenceMemberPlayDelete(client().getPlivoRestClient().getAuthId(), conferenceName, id);
   }
 
   @Override

@@ -140,6 +140,6 @@ public class ApplicationCreator extends Creator<ApplicationCreateResponse> {
 
   @Override
   protected Call<ApplicationCreateResponse> obtainCall() {
-    return client().getRegularClient().getApiService().applicationCreate(client().getRegularClient().getAuthId(), this);
+    return client().getPlivoRestClient().getApiService().applicationCreate(client().getPlivoRestClient().getAuthId(), this);
   }
 }

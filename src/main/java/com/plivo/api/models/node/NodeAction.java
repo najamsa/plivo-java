@@ -21,7 +21,7 @@ public class NodeAction<T extends BaseResponse> extends Creator<ActionResponse> 
 
   @Override
   protected Call<ActionResponse> obtainCall() {
-    return client().getPhloClient().getApiService().nodeAction(this.phloId, this.nodeType,
+    return client().getPhloRestClient().getApiService().nodeAction(this.phloId, this.nodeType,
       this.nodeId, this.nodeActionPayload);
   }
 }

@@ -16,6 +16,6 @@ public class PricingGetter extends Getter<Pricing> {
 
   @Override
   protected Call<Pricing> obtainCall() {
-    return client().getRegularClient().getApiService().pricingGet(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().pricingGet(client().getPlivoRestClient().getAuthId(), id);
   }
 }

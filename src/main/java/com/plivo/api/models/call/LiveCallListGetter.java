@@ -11,6 +11,6 @@ public class LiveCallListGetter extends Getter<LiveCallListResponse> {
 
   @Override
   protected Call<LiveCallListResponse> obtainCall() {
-    return client().getRegularClient().getApiService().liveCallListGet(client().getRegularClient().getAuthId());
+    return client().getPlivoRestClient().getApiService().liveCallListGet(client().getPlivoRestClient().getAuthId());
   }
 }

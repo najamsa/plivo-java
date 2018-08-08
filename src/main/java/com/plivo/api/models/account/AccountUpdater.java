@@ -60,6 +60,6 @@ public class AccountUpdater extends Updater<AccountUpdateResponse> {
 
   @Override
   protected Call<AccountUpdateResponse> obtainCall() {
-    return client().getRegularClient().getApiService().accountModify(client().getRegularClient().getAuthId(), this);
+    return client().getPlivoRestClient().getApiService().accountModify(client().getPlivoRestClient().getAuthId(), this);
   }
 }

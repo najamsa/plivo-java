@@ -13,6 +13,6 @@ public class PhloRunner extends Creator<PhloRunResponse> {
 
   @Override
   protected Call<PhloRunResponse> obtainCall() {
-    return client().getPhloClient().getApiService().runPhlo(this.client().getPhloClient().getAuthId(), this.phloId);
+    return client().getPhloRestClient().getApiService().runPhlo(this.client().getPhloRestClient().getAuthId(), this.phloId);
   }
 }

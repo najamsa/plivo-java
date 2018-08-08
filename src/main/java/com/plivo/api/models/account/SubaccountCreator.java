@@ -46,6 +46,6 @@ public class SubaccountCreator extends Creator<SubaccountCreateResponse> {
 
   @Override
   protected Call<SubaccountCreateResponse> obtainCall() {
-    return client().getRegularClient().getApiService().subaccountCreate(client().getRegularClient().getAuthId(), this);
+    return client().getPlivoRestClient().getApiService().subaccountCreate(client().getPlivoRestClient().getAuthId(), this);
   }
 }

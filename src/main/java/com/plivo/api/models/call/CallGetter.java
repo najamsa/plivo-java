@@ -10,6 +10,6 @@ public class CallGetter extends Getter<Call> {
 
   @Override
   protected retrofit2.Call<Call> obtainCall() {
-    return client().getRegularClient().getApiService().callGet(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().callGet(client().getPlivoRestClient().getAuthId(), id);
   }
 }

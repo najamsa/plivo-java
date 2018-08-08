@@ -12,6 +12,6 @@ public class ApplicationDeleter extends Deleter<Application> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getRegularClient().getApiService().applicationDelete(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().applicationDelete(client().getPlivoRestClient().getAuthId(), id);
   }
 }

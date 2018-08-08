@@ -11,6 +11,6 @@ public class ConferenceListGetter extends Getter<ConferenceList> {
 
   @Override
   protected Call<ConferenceList> obtainCall() {
-    return client().getRegularClient().getApiService().conferenceListGet(client().getRegularClient().getAuthId());
+    return client().getPlivoRestClient().getApiService().conferenceListGet(client().getPlivoRestClient().getAuthId());
   }
 }

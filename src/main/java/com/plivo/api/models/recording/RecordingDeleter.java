@@ -12,6 +12,6 @@ public class RecordingDeleter extends Deleter<Recording> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getRegularClient().getApiService().recordingDelete(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().recordingDelete(client().getPlivoRestClient().getAuthId(), id);
   }
 }

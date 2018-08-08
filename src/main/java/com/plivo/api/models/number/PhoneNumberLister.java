@@ -83,6 +83,6 @@ public class PhoneNumberLister extends Lister<PhoneNumber> {
 
   @Override
   protected Call<ListResponse<PhoneNumber>> obtainCall() {
-    return client().getRegularClient().getApiService().phoneNumberList(client().getRegularClient().getAuthId(), toMap());
+    return client().getPlivoRestClient().getApiService().phoneNumberList(client().getPlivoRestClient().getAuthId(), toMap());
   }
 }

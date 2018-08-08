@@ -11,6 +11,6 @@ public class AccountGetter extends Getter<Account> {
 
   @Override
   protected Call<Account> obtainCall() {
-    return client().getRegularClient().getApiService().accountGet(client().getRegularClient().getAuthId());
+    return client().getPlivoRestClient().getApiService().accountGet(client().getPlivoRestClient().getAuthId());
   }
 }

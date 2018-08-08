@@ -12,6 +12,6 @@ public class ConferenceDeleter extends Deleter<Conference> {
 
   @Override
   protected Call<ResponseBody> obtainCall() {
-    return client().getRegularClient().getApiService().conferenceDelete(client().getRegularClient().getAuthId(), id);
+    return client().getPlivoRestClient().getApiService().conferenceDelete(client().getPlivoRestClient().getAuthId(), id);
   }
 }

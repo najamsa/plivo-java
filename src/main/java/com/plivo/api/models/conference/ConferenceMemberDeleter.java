@@ -13,8 +13,8 @@ public class ConferenceMemberDeleter extends ConferenceMemberDeleterAction {
 
   @Override
   protected Call<ConferenceMemberActionResponse> obtainCall() {
-    return client().getRegularClient().getApiService()
-      .conferenceMemberDelete(client().getRegularClient().getAuthId(), conferenceName, id);
+    return client().getPlivoRestClient().getApiService()
+      .conferenceMemberDelete(client().getPlivoRestClient().getAuthId(), conferenceName, id);
   }
 
   public void hangup() throws IOException, PlivoRestException {
