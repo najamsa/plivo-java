@@ -50,8 +50,8 @@ public class BaseClient {
   static {
     try {
       InputStream inputStream = BaseClient.class
-        .getResource("version.txt")
-        .openStream();
+          .getResource("version.txt")
+          .openStream();
 
       version = new BufferedReader(new InputStreamReader(inputStream)).readLine();
     } catch (IOException ignored) {
@@ -87,7 +87,7 @@ public class BaseClient {
   }
 
   private final Interceptor interceptor = new HttpLoggingInterceptor()
-    .setLevel(HttpLoggingInterceptor.Level.BODY);
+     .setLevel(HttpLoggingInterceptor.Level.BODY);
   private final String authId;
   private final String authToken;
   private OkHttpClient httpClient;
@@ -108,10 +108,10 @@ public class BaseClient {
    *   .connectTimeout(1, TimeUnit.MINUTES);
    * </code></pre>
    *
-   * @param authId
-   * @param authToken
-   * @param httpClientBuilder
-   * @param apiUrl
+   * @param authId plivo authenticationId
+   * @param authToken plivo authentication token
+   * @param httpClientBuilder http client builder to make requests
+   * @param apiUrl url to the api server
    */
   public BaseClient(String authId, String authToken, OkHttpClient.Builder httpClientBuilder, String apiUrl ) {
     if (!(Utils.isAccountIdValid(authId) || Utils.isSubaccountIdValid(authId))) {

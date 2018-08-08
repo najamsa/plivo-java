@@ -7,6 +7,10 @@ public class PlivoClient {
   private final PlivoRestClient plivoRestClient;
   private final PhloRestClient phloRestClient;
 
+  /**
+    *  Creates an instance of {@link PlivoClient}.
+    *  This is a wrapper for both {@link PlivoRestClient} and {@link PhloRestClient}.
+   */
   public PlivoClient(final String authId, final String authToken) {
     this.plivoRestClient = new PlivoRestClient(authId, authToken);
     this.phloRestClient = new PhloRestClient(authId, authToken);

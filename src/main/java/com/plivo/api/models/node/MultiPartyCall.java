@@ -23,7 +23,7 @@ public class MultiPartyCall extends Node {
     return update(NodeActionType.COLDTRANSFER, NodeType.MULTIPARTYCALL, triggerSource, to, role);
   }
 
-  public MultiPartyCallMember member(final String memberId){
+  public MultiPartyCallMember member(final String memberId) {
     return new MultiPartyCallMember(getPhloId(), NodeType.MULTIPARTYCALL, getNodeId(), memberId);
   }
 }

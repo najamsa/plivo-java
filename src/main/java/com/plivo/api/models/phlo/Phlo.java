@@ -33,6 +33,8 @@ public class Phlo extends BaseResource {
     return new PhloGetter(phloId);
   }
 
-  public static PhloRunner runner(final String phloId) { return new PhloRunner(phloId); }
+  public static PhloRunner runner(final String phloId) {
+    return new PhloRunner(phloId);
+  }
 
 }
