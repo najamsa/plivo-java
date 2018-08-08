@@ -24,17 +24,17 @@ public class MultiPartyCallTest extends BaseTest {
   @Test
   public void multiPartyCallNodeCallActionShouldSucceed() throws Exception {
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.call("1111111111", "1111111111", "agent").create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"call\"}");
   }
@@ -45,18 +45,18 @@ public class MultiPartyCallTest extends BaseTest {
     PlivoClient client = new PlivoClient("MA123456789012345678",
         "Zmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.call("1111111111", "1111111111", "agent")
         .client(client).create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"call\"}");
   }
@@ -64,17 +64,17 @@ public class MultiPartyCallTest extends BaseTest {
   @Test
   public void multiPartyCallNodeWarmTransferActionShouldSucceed() throws Exception {
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.warmTransfer("1111111111", "1111111111", "agent").create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"warmtransfer\"}");
   }
@@ -85,18 +85,18 @@ public class MultiPartyCallTest extends BaseTest {
     PlivoClient client = new PlivoClient("MA123456789012345678",
         "Zmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.warmTransfer("1111111111", "1111111111", "agent")
         .client(client).create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"warmtransfer\"}");
   }
@@ -104,17 +104,17 @@ public class MultiPartyCallTest extends BaseTest {
   @Test
   public void multiPartyCallNodeColdTransferActionShouldSucceed() throws Exception {
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.coldTransfer("1111111111", "1111111111", "agent").create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"coldtransfer\"}");
   }
@@ -125,18 +125,18 @@ public class MultiPartyCallTest extends BaseTest {
     PlivoClient client = new PlivoClient("MA123456789012345678",
         "Zmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
-    assertRequestWithBody("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
+    assertApiRequest("GET", "/", "phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6");
 
     MultiPartyCall multiPartyCall = phlo.multiPartyCallGetter(
         "f4789ccf-25f5-4a1f-91a4-55ca022ba903").get();
 
-    assertRequestWithBody("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("GET", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903");
 
     multiPartyCall.coldTransfer("1111111111", "1111111111", "agent")
         .client(client).create();
 
-    assertRequestWithBody("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
+    assertApiRequest("POST", "/phlo/a9f74ec4-2d3f-41d6-b8f0-f341fcfb59b6/",
         "multi_party_call/f4789ccf-25f5-4a1f-91a4-55ca022ba903",
         "{\"trigger_source\":\"1111111111\",\"to\":\"1111111111\",\"role\":\"agent\",\"action\":\"coldtransfer\"}");
   }
